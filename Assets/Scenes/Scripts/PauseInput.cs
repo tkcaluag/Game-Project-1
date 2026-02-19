@@ -11,8 +11,13 @@ public class PauseInput : MonoBehaviour
 
     public void Pause()
     {
-        menu.SetActive(true);
-        Time.timeScale = 0;
+        if(Time.timeScale != 0){
+            menu.SetActive(true);
+            Time.timeScale = 0;
+        } else
+        {
+            return;
+        }
     }
 
     public void Resume()
